@@ -1,0 +1,59 @@
+<script src="/js/assets/Admin.js" defer></script>
+
+ 
+    <%- include('./component/head') %>
+    <body>
+      <div class="wrapper">
+        <%- include('./component/sidebar') %>
+  
+  
+       
+            <%- include('./component/navbar') %>
+  
+          <div class="container">
+            <div class="page-inner">
+              <div
+                class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
+              >
+                <form id="createAdmin" class="w-100">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input 
+                                    type="text"
+                                    class="form-control"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Masukan email"
+                                    />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Masukan Password"
+                                    />
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-success mr-2">Submit</button>
+                            <button type="button" id="cancelButton" class="btn btn-danger">Cancel</button>
+                          </div>
+                    </div>
+                </form>
+              </div>
+             </div>
+  
+             <%- include('./component/footer') %>
+  
+      </div>
+      <%- include('./component/scirpt') %>
+  
+   
+  

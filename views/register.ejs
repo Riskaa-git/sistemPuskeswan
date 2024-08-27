@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+     <link rel="stylesheet" href="/css/loginRegister/style.css"> 
+
+     <script src="/js/assets/register.js" defer></script>
+
+</head>
+<body>
+     
+     <!-- Sign up form -->
+     <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Sign up</h2>
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input type="email" name="email" id="email" placeholder="Your Email"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="password" id="password" placeholder="Password"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="nama" id="nama" placeholder="Your name"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="NIK"><i class="zmdi zmdi-assignment"></i></label>
+                            <input type="number" name="NIK" id="NIK" placeholder="NIK"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat"><i class="zmdi zmdi-map"></i></label>
+                            <input type="text" name="alamat" id="alamat" placeholder="Alamat"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="kelurahan"><i class="zmdi zmdi-pin"></i></label>
+                            <input type="text" name="kelurahan" id="kelurahan" placeholder="Kelurahan"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="kecamatan"><i class="zmdi zmdi-pin-drop"></i></label>
+                            <input type="text" name="kecamatan" id="kecamatan" placeholder="Kecamatan"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="nomorWA"><i class="zmdi zmdi-phone"></i></label>
+                            <input type="number" name="nomorWA" id="nomorWA" placeholder="nomor hp"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signin" id="signin" class="form-submit"value="Register"/>
+                        </div>
+                    </form>
+                    <div id="message"></div>
+                </div>
+                <div class="signup-image">
+                    <figure><img src="img/logoPuskeswan.png" alt="sing up image"></figure>
+                    <a href="/login" class="signup-image-link">I am already member</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- JS -->
+    <script src="/js/loginRegister/jquery/jquery.min.js"></script> 
+    <script src="/js/loginRegister/main.js"></script> 
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

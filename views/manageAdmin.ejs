@@ -1,0 +1,42 @@
+<script src="/js/assets/Admin.js" defer></script>
+<style>
+      
+
+  .table-responsive {
+      max-height: 70vh; /* Set a max height to ensure table can scroll */
+      overflow-y: auto;
+  }
+</style>
+    <%- include('./component/head') %>
+   
+
+</head>
+<body>
+  
+    <div class="wrapper">
+        <%- include('./component/sidebar') %>
+</div>
+        <div class="container mt-4">
+          <div class="page-inner">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+              <div>
+                <h1>Admin list</h1>
+              </div>
+              <div class="ms-md-auto py-2 py-md-0">
+                <a href="/addAdmin" class="btn btn-primary btn-round">Add Admin</a>
+              </div>
+              
+
+            </div>
+            <div id="users" class="table-responsive"></div>
+          </div>
+      </div>
+
+         <%- include('./component/footer') %>
+
+
+      </div>
+      <%- include('./component/scirpt') %>
+  
+   
+  
