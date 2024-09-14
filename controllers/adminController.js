@@ -169,6 +169,9 @@ const deleteConsultation = async (req, res) => {
   }
 };
 
+
+
+
 module.exports = { 
   handleConsultation, 
   createAdmin, 
@@ -180,5 +183,6 @@ module.exports = {
   getConsultationsByUserId, 
   getConsultationsBySearch,
   getConsultationDetails,  
-  deleteConsultation       
+  deleteConsultation ,
+      
 };

@@ -89,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
           <tr>
             <th scope="col">Email</th>
             <th scope="col">Role</th>
-            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -103,9 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
         row.innerHTML = `
           <td>${user.email}</td>
           <td>${user.role}</td>
-          <td>
-            <a href="/user-detail/${user.id}" class="btn btn-primary btn-sm">Detail</a>
-          </td>
+        
         `;
         tbody.appendChild(row);
       });

@@ -1,5 +1,17 @@
 const express = require('express');
-const { handleConsultation, createAdmin, loginAdmin, getUsers, getConsultations, getApprovedOrRejectedConsultations, getConsultationsByUserId, getConsultationsBySearch, getConsultationDetails, deleteConsultation  } = require('../controllers/adminController');
+const {
+     handleConsultation, 
+     createAdmin, 
+     loginAdmin, 
+     getUsers, 
+     getConsultations, 
+     getApprovedOrRejectedConsultations, 
+     getConsultationsByUserId, 
+     getConsultationsBySearch, 
+     getConsultationDetails,
+      deleteConsultation ,
+
+} = require('../controllers/adminController');
 const { authenticateToken, isSuperAdmin, isSuperAdminOrAdmin } = require('../middlewares/authMiddleware');
 const router = express.Router();
 

@@ -79,6 +79,7 @@ app.get('/history', (req, res) => {
 app.get('/admin/consultation-detail-admin/:id', (req, res) => {
     res.render('admin/consultation-detail-admin')
 });
+
 // app.get('/userConsultation', (req, res) => {
 //   res.render('userConsultation');
 // });
