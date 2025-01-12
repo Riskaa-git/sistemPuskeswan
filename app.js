@@ -22,7 +22,7 @@ const corsConfig = {
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 };
 
-app.options('*', cors(corsConfig));
+app.options('', cors(corsConfig));
 app.use(cors(corsConfig));
 // Set up view engine
 app.set('view engine', 'ejs');
