@@ -1,7 +1,16 @@
 const app = require('./app');
 const { sequelize } = require('./models');
-
 const PORT = process.env.PORT || 3000;
+const cors = require('cors');
+
+const corsConfig = {
+  origin: '*',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+};
+
+app.options('*', cors(corsConfig));
+app.use(cors(corsConfig));
 
 sequelize.authenticate()
   .then(() => {
