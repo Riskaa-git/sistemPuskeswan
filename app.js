@@ -10,10 +10,20 @@ const adminRoutes = require('./routes/adminRoutes');
 const profilRoutes = require('./routes/profilRoutes');
 const { sequelize } = require('./models');
 const { createSuperAdmin } = require('./controllers/adminController');
+const cors = require('cors');
 
 dotenv.config();
 const app = express();
+// cors
 
+const corsConfig = {
+  origin: '*',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+};
+
+app.options('*', cors(corsConfig));
+app.use(cors(corsConfig));
 // Set up view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -98,6 +108,8 @@ app.use((error, req, res, next) => {
   res.status(error.status || 500);
   res.json({ error: { message: error.message } });
 });
+
+
 
 // // Buat akun superadmin jika belum ada
 //  sequelize.sync().then(async () => {
