@@ -5,9 +5,7 @@ const config = require('../config/config')[process.env.NODE_ENV || 'development'
 const sequelize = new Sequelize(config.database, config.username, config.password, {
   host: config.host,
   dialect: config.dialect,
-  // Menambahkan pengaturan SSL jika diperlukan
-  ssl: config.ssl || false, // Menggunakan SSL jika ada di konfigurasi
-  dialectOptions: config.ssl ? { ssl: { rejectUnauthorized: false } } : {} // Menambahkan opsi SSL jika ada
+  dialectOptions: config.dialectOptions, // Menggunakan pengaturan dialectOptions dari config
 });
 
 const db = {};
