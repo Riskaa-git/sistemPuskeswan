@@ -3,13 +3,13 @@ const { createConsultation, getConsultationById, updateConsultationStatus, getSt
 const { authenticateToken } = require('../middlewares/authMiddleware');
 const router = express.Router();
 
-router.post('/consultation', authenticateToken, createConsultation);
-router.get('/consultations/:id', authenticateToken, getConsultationById);
-router.put('/consultations/:id/status', authenticateToken, updateConsultationStatus);
-router.get('/consultations/getStatusById/:userId', authenticateToken, getStatusById);
-router.get('/consultations/getUserConsultationsPage', authenticateToken, getUserConsultationsPage);
-router.get('/consultations/getUserConsultationsData', authenticateToken, getUserConsultationsData);
-router.get('/consultations/userConsultation/:userId', authenticateToken, getConsultationsByUserId); // New route
+router.post('/consultation',  createConsultation);
+router.get('/consultations/:id',  getConsultationById);
+router.put('/consultations/:id/status',  updateConsultationStatus);
+router.get('/consultations/getStatusById/:userId',  getStatusById);
+router.get('/consultations/getUserConsultationsPage',  getUserConsultationsPage);
+router.get('/consultations/getUserConsultationsData',  getUserConsultationsData);
+router.get('/consultations/userConsultation/:userId',  getConsultationsByUserId); // New route
 router.get('/consultation-queue', getConsultationQueue); // Tambahkan ini
-router.get('/consultation/queue/:userId', authenticateToken,getQueueByUserId)
+router.get('/consultation/queue/:userId', getQueueByUserId)
 module.exports = router;

@@ -6,7 +6,7 @@ const { authenticateToken } = require('../middlewares/authMiddleware');
 
 const router = express.Router();
 
-router.put('/profil', authenticateToken, updateProfile);
-router.get('/profil', authenticateToken, getProfile);
+router.put('/profil',  updateProfile);
+router.get('/profil',  getProfile);
 
 module.exports = router;
