@@ -53,4 +53,31 @@ const isSuperAdminOrAdmin = async (req, res, next) => {
   next();
 };
 
-module.exports = { authMiddleware, authenticateToken, isSuperAdmin, isSuperAdminOrAdmin };
+const publicRoutes = ['/loginAdmin', '/register'];
+
+const requireAuthAdmin = (req, res, next) => {
+  const token = req.cookies.jwt;
+
+  if (publicRoutes.includes(req.path)) {
+    return next(); // Allow access to public routes without authentication
+  }
+
+  if (token) {
+    jwt.verify(token, process.env.JWT_SECRET, (err, decodedToken) => {
+      if (err) {
+        console.log(err.message);
+        res.redirect('/loginAdmin');
+      } else {
+        next();
+      }
+    });
+  } else {
+    res.redirect('/loginAdmin');
+  }
+};
+
+
+
+
+
+module.exports = { authMiddleware, authenticateToken, isSuperAdmin, isSuperAdminOrAdmin, requireAuthAdmin };

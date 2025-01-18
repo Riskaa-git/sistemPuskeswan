@@ -10,6 +10,7 @@ const adminRoutes = require('./routes/adminRoutes');
 const profilRoutes = require('./routes/profilRoutes');
 const { sequelize } = require('./models');
 const { createSuperAdmin } = require('./controllers/adminController');
+const { requireAuthAdmin } = require('./middlewares/authMiddleware');
 
 
 dotenv.config();
@@ -34,25 +35,25 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/user', profilRoutes);
 
 // Serve the homepage
-app.get('/', (req, res) => {
+app.get('/', requireAuthAdmin, (req, res) => {
   res.render('index');
 });
- app.get('/login', (req, res) => {
-   res.render('login');
- });
- app.get('/register', (req, res) => {
-   res.render('register');
- });
- app.get('/userDashboard', (req, res) => {
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+app.get('/register', (req, res) => {
+  res.render('register');
+});
+app.get('/userDashboard', (req, res) => {
   res.render('userDashboard');
- });
- app.get('/dashboard', (req, res) => {
+});
+app.get('/dashboard', (req, res) => {
   res.render('dashboard');
- });
- app.get('/loginAdmin', (req, res) =>{
-   res.render('loginAdmin');
- });
- app.get('/consultation-detail/:id', (req, res) => {
+});
+app.get('/loginAdmin', (req, res) => {
+  res.render('loginAdmin');
+});
+app.get('/consultation-detail/:id', (req, res) => {
   res.render('consultation-detail');
 });
 app.get('/manageAdmin', (req, res) => {
@@ -65,7 +66,7 @@ app.get('/profil', (req, res) => {
   res.render('profil')
 });
 app.get('/home', (req, res) => {
-  res.render('home')  // Pass the user object
+  res.render('home')  // Pass the user object 
 });
 app.get('/manageConsultation', (req, res) => {
   res.render('manageConsultation')
@@ -80,7 +81,7 @@ app.get('/history', (req, res) => {
   res.render('history')
 });
 app.get('/admin/consultation-detail-admin/:id', (req, res) => {
-    res.render('admin/consultation-detail-admin')
+  res.render('admin/consultation-detail-admin')
 });
 
 // app.get('/userConsultation', (req, res) => {
